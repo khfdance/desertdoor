@@ -63,7 +63,7 @@ nav.nav-dark a:hover { opacity: 0.6; }
     height: 100vh;
     width: 100%;
     /* Default image (Mountain) for Homepage */
-    background-image: url('8DE2292E-6CAC-4C26-8E25-024FC0549861 2.jpg');
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
