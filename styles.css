@@ -1,0 +1,285 @@
+/* --- GLOBAL VARIABLES & FONTS --- */
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #333;
+    --font-header: 'Montserrat', sans-serif; 
+    --font-body: 'Montserrat', sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+    
+    --nav-color-light: #fff;
+    --nav-color-dark: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+/* --- NAVIGATION (SHARED) --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 100;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Nav modifiers */
+nav.nav-light a { 
+    color: white; 
+    mix-blend-mode: overlay;
+}
+nav.nav-light a:hover { opacity: 1; mix-blend-mode: normal; }
+
+nav.nav-dark {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 0;
+}
+nav.nav-dark a { 
+    color: var(--nav-color-dark); 
+    border-bottom: 1px solid transparent; 
+}
+nav.nav-dark a.active { border-bottom: 1px solid var(--text-color); }
+nav.nav-dark a:hover { opacity: 0.6; }
+
+
+/* --- HERO SECTION (BASE STYLES used by Home) --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* Default image (Mountain) for Homepage */
+    background-image: url('8DE2292E-6CAC-4C26-8E25-024FC0549861 2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+/* Base Overlay */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* --- HERO MODIFIERS --- */
+.hero.apply-hero {
+    background-image: url('image_2.png');
+    background-position: center bottom; 
+}
+
+.hero.apply-hero::after {
+    background: rgba(0,0,0,0.5);
+}
+
+
+/* --- HERO CONTENT & CREDIT --- */
+.hero-content {
+    z-index: 2;
+    max-width: 900px;
+}
+
+.photo-credit {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: var(--font-header);
+    font-size: 5rem;
+    font-weight: 200;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.subheader {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.6);
+    padding-top: 1.5rem;
+    display: inline-block;
+}
+
+/* --- APPLY PAGE CONTENT SPECIFIC --- */
+.apply-container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.apply-intro {
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.insta-link {
+    font-size: 4rem;
+    font-weight: 200;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.insta-link:hover {
+    border-bottom: 2px solid rgba(255,255,255, 1);
+    transform: scale(1.02);
+}
+
+/* --- CONTENT SECTIONS --- */
+.content-section {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonial {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.author {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+hr.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    width: 50px;
+    margin: 4rem auto;
+}
+
+/* --- ABOUT PAGE STYLES --- */
+.about-container {
+    max-width: 720px;
+    margin: 2rem auto 8rem auto;
+    padding: 0 2rem;
+}
+
+.about-title {
+    font-family: var(--font-header);
+    font-size: 3rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #222;
+}
+
+.text-block {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 2rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.text-block:first-of-type::first-letter {
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.8;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-family: var(--font-header);
+}
+
+/* Style for individual images */
+.about-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 3rem auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* NEW: Grid layout for the collection of images */
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Space between images */
+    margin: 3rem 0; /* Space above and below the entire grid */
+}
+
+/* Ensure images within the grid fill their column and lose their individual margin */
+.image-grid .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the square without distortion */
+    margin: 0;
+}
+
+
+/* --- MOBILE QUERIES --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; letter-spacing: -1px;}
+    .insta-link { font-size: 2rem; border-width: 1px;}
+    .subheader { font-size: 0.6rem; letter-spacing: 2px; }
+    nav { gap: 1.5rem; padding: 1.5rem; }
+    .quote { font-size: 1.3rem; }
+    .about-title { font-size: 2.2rem; margin-bottom: 2rem; }
+    .text-block { font-size: 1.1rem; text-align: left; }
+    .about-image { margin: 2rem auto; }
+    .photo-credit { bottom: 15px; right: 20px; font-size: 0.55rem; }
+    
+    /* NEW: Make grid a single column on mobile */
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
